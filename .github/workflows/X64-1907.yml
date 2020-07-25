@@ -7,12 +7,21 @@
 #=================================================
 name: X64-1907
 
-on:
-  schedule:
-    - cron: 0 20 * * *
-#  push:
-#    branches: 
-#      - master
+on: 
+  release:
+    types: [published]
+
+  # 编辑触发
+  #push:
+    #branches: 
+      #- master
+
+  # 定时触发()
+  #schedule:
+  #  - cron: 0 8 * * 5
+  
+  watch:
+    types: [started]
 
 jobs:
   build:
